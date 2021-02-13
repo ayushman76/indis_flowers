@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        india's Flowers
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Bootsrap stylesheet -->
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- --------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* global Css */
+        
+        body {
+            color: rgb(255 255 255) !important;
+            font-family: 'Raleway', sans-serif!important;
+            background: rgb(83 109 91)!important;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a {
+            color: white!important;
+        }
+        
+        .pad-10,
+        .navigation,
+        ul,
+        section,
+        .my_plant,
+        .my_plant_content,
+        .my_flower,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 10px!important;
+        }
+        
+        a:hover {
+            background-color: transparent!important;
+        }
+        /* global Css */
+        
+        header {
+            box-shadow: 0px 4px 35px 1px #68816d1c;
+        }
+        
+        .my_plant>img {
+            padding: 10px;
+            border-radius: 45px;
+            box-shadow: 0px 22px 51px 0px #476743;
+            width: 315px;
+            background: rgb(134 158 131);
+        }
+        
+        section>.container {
+            background: rgb(134 158 131);
+            border-radius: 28px;
+        }
+        
+        .logo {
+            width: 102px;
+            padding: 10px;
+        }
+        
+        .tabcontent {
+            display: none;
+        }
+        
+        .my_flower,
+        .my_flowers {
+            background: rgb(130 154 127 / 59%);
+            border-radius: 16px;
+            text-align: center;
+            margin: 10px 0px;
+            backdrop-filter: blur(33px);
+        }
+        
+        .my_flower>img,
+        .my_flowers>img {
+            width: 180px!important;
+            margin: 0 auto;
+        }
+        
+        .plus {
+            font-size: 34px;
+            padding: 0px 26px;
+            background: rgb(0 0 0 / 53%);
+            border-radius: 12px;
+            backdrop-filter: blur(22px);
+        }
+        
+        .article01 {
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .name {
+            font-size: 43px;
+            font-weight: 900;
+            letter-spacing: 6px;
+        }
+        
+        .cut {
+            position: absolute;
+            top: -63px;
+            right: 6px;
+            font-size: 36px;
+            padding: 10px;
+            border: 1px solid rgb(255 255 255);
+            border-radius: 9px;
+            font-weight: 100!important;
+        }
+        
+        .my_flowers {
+            width: 30%;
+            position: fixed;
+            right: 0;
+        }
+        
+        .my_flower>img:hover {
+            transform: scale3d(1.5, 1.5, 1.5);
+            transition: 0.4s;
+        }
+        
+        @media(max-width:1200px) {
+            .navigation {
+                display: none;
+            }
+            .my_plant>img {
+                width: 100%;
+            }
+            .col-md-3 {
+                width: 33.333%;
+                float: left;
+            }
+            .first {
+                border: 1px solid rgb(255 255 255);
+                width: 15%;
+                margin: 8px 0px;
+            }
+            .sec {
+                border: 1px solid rgb(255 255 255);
+                width: 10%;
+            }
+            .menu {
+                line-height: 6;
+                position: absolute;
+                top: -51px;
+                right: 32px;
+                width: 56%;
+                transform: rotate( -180deg);
+            }
+            .my_flower>img {
+                width: 100%;
+                margin: 0 auto;
+                height: 113px;
+            }
+            .my_flowers>img:hover {
+                transform: scale3d(1.5, 1.5, 1.5);
+                transition: 0.4s;
+            }
+            .my_flowers {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <script>
+        var header = function() {
+
+            //Get Body Tag
+            body = document.getElementById('body'); //Golbel Variable
+            //Create Header Tag
+            var header = document.createElement('header');
+            body.appendChild(header);
+            header.innerHTML += '<div class="container"><div class="row"></div><!--//row---></div><!--//container-->';
+            //Create Jason API For Header
+            var header_jason = [{
+                logo: "images/logo.png",
+            }, {
+                menu: 'Home',
+                menu01: 'About',
+                menu02: 'Service',
+                menu03: 'Flowers',
+                menu04: 'Flowers category',
+                menu05: 'contact Us'
+
+            }]
+            document.querySelector('header>.container>.row').innerHTML += `
+               <div class="col-md-4">
+                   <div class="my_logo">
+                        <img src="${header_jason[0].logo}" class="logo">
+                    </div>     
+               </div>
+               <!--//col-md-4-->
+               <div class="col-md-8">
+                   <nav>
+                       <div class="navigation">
+                           <ul class="navbar-nav nav">
+                               <li><a href="#">${header_jason[1].menu}</a></li> 
+                               <li><a href="#">${header_jason[1].menu01}</a></li> 
+                               <li><a href="#">${header_jason[1].menu02}</a></li> 
+                               <li><a href="#">${header_jason[1].menu03}</a></li> 
+                               <li><a href="#">${header_jason[1].menu04}</a></li>
+                               <li><a href="#">${header_jason[1].menu05}</a></li> 
+                               
+                           </ul>                    
+                       </div> 
+                   </nav>  
+                   <div class="menu" onclick="menu()">
+                    <div class="first"></div> 
+                    <div class="sec"></div>
+	              </div>   
+               </div>
+               <!--//col-md-8-->
+            `;
+        }
+        header();
+        //END Header & Navigation Area
+    </script>
+    <script>
+        //     Start Banner Area
+        var banner = function() {
+            //var Section
+            var section;
+            //         create Section Tag
+            section = document.createElement('section');
+            body.appendChild(section);
+            //ADDING some Elements in section
+            section.innerHTML += '<div class="container"><div class="row"></div><!---//row---></div><!--//container-fluid-->';
+
+            var banner_jason = [{
+                p_img: "images/banner_img01.png",
+                head: "India's Flowers",
+                para: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcuLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.',
+            }]
+            document.querySelector('section>.container>.row').innerHTML += `
+               <div class="col-md-6">
+                   <div class="my_plant">
+                        <img src="${banner_jason[0].p_img}">
+                    </div>     
+               </div>
+               <!--//col-md-6-->
+               <div class="col-md-6">
+                   <div class="my_plant_content">
+                        <h1>${banner_jason[0].head}</h1>
+                        <hr>
+                        <p>${banner_jason[0].para}</p>
+                    </div>     
+               </div>
+               <!--//col-md-6-->
+            `;
+
+        }
+        banner();
+    </script>
+    <!-- //Banner Section -->
+
+    <script>
+        var article;
+        article = document.createElement('article');
+        body.appendChild(article);
+        article.innerHTML += '<div class="container"><div class="row"><h2>Discover Flowers</h2></div><!---//row--></div><!--//container-->';
+
+        var flowers = function fl01(img, name, link, my_event) {
+            this.img = img;
+            this.name = name;
+            this.link = link;
+            this.my_event = my_event;
+        }
+        flowers();
+
+        var p_1 = new flowers('images/merigold.png', 'Merigold', 'tablinks', "myClick(event, 'merigold')");
+        var p_2 = new flowers('images/hibiscus.png', 'Hibiscus', 'tablinks', "myClick(event, 'hibiscus')");
+        var p_3 = new flowers('images/pansy.png', 'Pansy', 'tablinks', "myClick(event, 'pansy')");
+        var p_4 = new flowers('images/dahlia.png', 'Dahlia', 'tablinks', "myClick(event, 'dahlia')");
+
+        var arr = [p_1, p_2, p_3, p_4];
+
+        for (var i in arr) {
+            document.querySelector('article>.container>.row').innerHTML += `
+                <div class="col-md-3">
+                    <div class="my_flower">
+                        <img src="${arr[i].img}" class="img-responsive">
+                        <p>${arr[i].name}</p>
+                        <span class="${arr[i].link} plus" onclick="${arr[i].my_event}">+</span>
+                    </div>    
+                </div>
+            `;
+        }
+    </script>
+
+    <script>
+        var article01;
+        article01 = document.createElement('article');
+        body.appendChild(article01);
+        article01.setAttribute('class', 'article01');
+        article01.innerHTML += '<div class="container"><div class="row"></div><!---//row--></div><!--//container-->';
+
+        var details = function fl02(img, name, discription, my_id) {
+            this.img = img;
+            this.name = name;
+            this.discription = discription;
+            this.my_id = my_id;
+
+        }
+        details();
+        var data01 = new details('images/merigold.png', 'Merigold', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcuLorem ipsum dolor sit amet,', 'merigold');
+
+        var data02 = new details('images/hibiscus.png', 'Hibiscus', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcuLorem ipsum dolor sit amet,', 'hibiscus');
+
+        var data03 = new details('images/pansy.png', 'Pansy', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcuLorem ipsum dolor sit amet,', 'pansy');
+
+        var data04 = new details('images/dahlia.png', 'Dahlia', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcuLorem ipsum dolor sit amet,', 'dahlia');
+
+        var arr01 = [data01, data02, data03, data04];
+
+        for (var i in arr01) {
+            document.querySelector('.article01>.container>.row').innerHTML += `
+                <div class="col-md-12">
+                    <div class="my_flowers tabcontent" id="${arr01[i].my_id}">
+                        <img src="${arr01[i].img}" class="img-responsive">
+                        <p class="name">${arr01[i].name}</p>
+                        <p>${arr01[i].discription}</p>
+                        <i class="fa fa-close cut" onclick="myclose()"></i>
+                    </div>    
+                </div>
+            `;
+        }
+
+        function myClick(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+
+
+            }
+            document.getElementById(cityName).style.display = "block";
+            document.getElementsByClassName('article02').style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function myclose() {
+            var btn = document.getElementsByClassName('my_flowers');
+            for (var i = 0; i < btn.length; i++) {
+                btn[i].style.display = "none";
+            }
+        }
+
+        function menu() {
+            var nav = document.querySelector('.navigation');
+            if (nav.style.display === "none") {
+                nav.style.display = "block";
+            } else {
+                nav.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
